@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pgs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pgs.each do |pg| %>
+      <tr>
+        <td><%= link_to 'Show', pg %></td>
+        <td><%= link_to 'Edit', edit_pg_path(pg) %></td>
+        <td><%= link_to 'Destroy', pg, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pg', new_pg_path %>
