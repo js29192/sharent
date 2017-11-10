@@ -7,8 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div>
+    <header>
+      <div>
+        <div>
+          <%= link_to "sharent", root_path %>
+        </div>
+          <ul>
+            <li>
+              <%= link_to "Contact Us", sharent_contact_path %>
+            </li>
+            <li>
+              <%= link_to "Actions", sharent_action_path %>
+            </li>
+          </ul>
+      </div>
+    </header>
+    <div>
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>

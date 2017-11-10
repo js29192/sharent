@@ -1,0 +1,2 @@
+module SharentHelper
+end
