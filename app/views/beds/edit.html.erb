@@ -3,4 +3,4 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @bed %> |
-<%= link_to 'Back', beds_path %>
+<%= link_to 'Back', beds_path(room_id: @bed.room_id) %>

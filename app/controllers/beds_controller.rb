@@ -4,7 +4,8 @@ class BedsController < ApplicationController
   # GET /beds
   # GET /beds.json
   def index
-    @beds = Bed.all
+    @room_id = params[:room_id]
+    @beds = Bed.where(room_id: @room_id)
   end
 
   # GET /beds/1

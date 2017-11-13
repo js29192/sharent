@@ -4,7 +4,8 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = Room.all
+    @pg_id = params[:pg_id]
+    @rooms = Room.where(pg_id: @pg_id)
   end
 
   # GET /rooms/1

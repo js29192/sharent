@@ -26,5 +26,7 @@
 </p>
 
 <%= link_to 'Add Bed', new_bed_path(room_id: @room.id) %> |
+<%= link_to 'List Beds', beds_path(room_id: @room.id) %>
+</br>
 <%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
+<%= link_to 'Back', rooms_path(pg_id: @room.pg_id) %>

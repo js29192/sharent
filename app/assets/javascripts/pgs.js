@@ -1,4 +1,4 @@
-$(document).ready( function() {
+$(document).ready(function(){
   cities = $('#pg_city_id').html();
   areas = $('#pg_area_id').html();
   $('#pg_city_id').parent().hide();
@@ -44,4 +44,4 @@ $(document).ready( function() {
       $('#pg_area_id').val('');
     }
   })
-})
+});

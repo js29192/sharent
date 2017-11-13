@@ -11,27 +11,39 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.label :pg_name %>
-    <%= f.text_field :pg_name, :placeholder => "PG Name" %>
-    <%= f.label :address %>
-    <%= f.text_field :address, :placeholder => "Address" %>
-    <%= f.label :state_id %>
+  <div class="field">
+    <%= f.label :pg_name %><br>
+    <%= f.text_field :pg_name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :state_id %><br>
     <%= f.collection_select :state_id, State.order(:name), :id, :name, {prompt: "Select State"} %>
-    <div id="city_id_div">
-      <%= f.label :city_id %>
-      <%= f.grouped_collection_select :city_id, State.order(:name), :cities, :name, :id, :name, {prompt: "Select City"} %>
-    </div>
-    <div id="area_id_div">
-      <%= f.label :area_id %>
-      <%= f.grouped_collection_select :area_id, City.order(:name), :areas, :name, :id, :name, {prompt: "Select Area"} %>
-    </div>
-    <%= f.label :pin_code %>
-    <%= f.text_field :pin_code, :placeholder => "Pin Code", maxlength: 6 %>
-    <%= f.label :normal_bed_price %>
-    <%= f.text_field :normal_bed_price, :placeholder => "Normal bed price" %>
-    <%= f.label :ac_bed_price %>
-    <%= f.text_field :ac_bed_price, :placeholder => "AC bed price" %>
-    <%= f.submit "ADD", :id => "pg_submit_button", :class => "button" %>
+  </div>
+  <div class="field">
+    <%= f.label :city_id %><br>
+    <%= f.grouped_collection_select :city_id, State.order(:name), :cities, :name, :id, :name, {prompt: "Select City"} %>
+  </div>
+  <div class="field">
+    <%= f.label :area_id %><br>
+    <%= f.grouped_collection_select :area_id, City.order(:name), :areas, :name, :id, :name, {prompt: "Select Area"} %>
+  </div>
+  <div class="field">
+    <%= f.label :pin_code %><br>
+    <%= f.text_field :pin_code %>
+  </div>
+  <div class="field">
+    <%= f.label :normal_bed_price %><br>
+    <%= f.text_field :normal_bed_price %>
+  </div>
+  <div class="field">
+    <%= f.label :ac_bed_price %><br>
+    <%= f.text_field :ac_bed_price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
   </div>
 <% end %>

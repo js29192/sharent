@@ -7,5 +7,7 @@
 <%= State.find(@pg.state_id).name %>
 
 <%= link_to 'Add Room', new_room_path(pg_id: @pg.id) %> |
+<%= link_to 'List Rooms', rooms_path(pg_id: @pg.id) %>
+</br>
 <%= link_to 'Edit', edit_pg_path(@pg) %> |
 <%= link_to 'Back', pgs_path %>
