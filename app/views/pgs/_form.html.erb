@@ -12,6 +12,26 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.label :pg_name %>
+    <%= f.text_field :pg_name, :placeholder => "PG Name" %>
+    <%= f.label :address %>
+    <%= f.text_field :address, :placeholder => "Address" %>
+    <%= f.label :state_id %>
+    <%= f.collection_select :state_id, State.order(:name), :id, :name, {prompt: "Select State"} %>
+    <div id="city_id_div">
+      <%= f.label :city_id %>
+      <%= f.grouped_collection_select :city_id, State.order(:name), :cities, :name, :id, :name, {prompt: "Select City"} %>
+    </div>
+    <div id="area_id_div">
+      <%= f.label :area_id %>
+      <%= f.grouped_collection_select :area_id, City.order(:name), :areas, :name, :id, :name, {prompt: "Select Area"} %>
+    </div>
+    <%= f.label :pin_code %>
+    <%= f.text_field :pin_code, :placeholder => "Pin Code", maxlength: 6 %>
+    <%= f.label :normal_bed_price %>
+    <%= f.text_field :normal_bed_price, :placeholder => "Normal bed price" %>
+    <%= f.label :ac_bed_price %>
+    <%= f.text_field :ac_bed_price, :placeholder => "AC bed price" %>
+    <%= f.submit "ADD", :id => "pg_submit_button", :class => "button" %>
   </div>
 <% end %>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :pgs
+
   root to: 'sharent#search'
 
   get 'sharent/contact'

@@ -69,6 +69,6 @@ class PgsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pg_params
-      params.fetch(:pg, {})
+      params.fetch(:pg, {}).permit(:pg_name, :address, :state_id, :city_id, :area_id, :pin_code, :normal_bed_price, :ac_bed_price)
     end
 end
