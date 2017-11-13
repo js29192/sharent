@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :beds
   resources :rooms
   resources :pgs
 

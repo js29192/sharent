@@ -1,0 +1,41 @@
+<%= form_for(@bed) do |f| %>
+  <% if @bed.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bed.errors.count, "error") %> prohibited this bed from being saved:</h2>
+
+      <ul>
+      <% @bed.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :room_id %><br>
+    <%= f.number_field :room_id, value: @bed.room_id, readonly: true %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :bed_number %><br>
+    <%= f.number_field :bed_number %>
+  </div>
+  <div class="field">
+    <%= f.label :booked %><br>
+    <%= f.check_box :booked %>
+  </div>
+  <div class="field">
+    <%= f.label :expected_booking_date %><br>
+    <%= f.date_select :expected_booking_date %>
+  </div>
+  <div class="field">
+    <%= f.label :expected_vacancy_date %><br>
+    <%= f.date_select :expected_vacancy_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bed_number: 1
+  room_id: 1
+  user_id: 1
+  booked: false
+  expected_booking_date: 2017-11-13
+  expected_vacancy_date: 2017-11-13
+
+two:
+  bed_number: 1
+  room_id: 1
+  user_id: 1
+  booked: false
+  expected_booking_date: 2017-11-13
+  expected_vacancy_date: 2017-11-13

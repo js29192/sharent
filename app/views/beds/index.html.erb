@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Beds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bed number</th>
+      <th>Room</th>
+      <th>User</th>
+      <th>Booked</th>
+      <th>Expected booking date</th>
+      <th>Expected vacancy date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @beds.each do |bed| %>
+      <tr>
+        <td><%= bed.bed_number %></td>
+        <td><%= bed.room_id %></td>
+        <td><%= bed.user_id %></td>
+        <td><%= bed.booked %></td>
+        <td><%= bed.expected_booking_date %></td>
+        <td><%= bed.expected_vacancy_date %></td>
+        <td><%= link_to 'Show', bed %></td>
+        <td><%= link_to 'Edit', edit_bed_path(bed) %></td>
+        <td><%= link_to 'Destroy', bed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bed', new_bed_path %>

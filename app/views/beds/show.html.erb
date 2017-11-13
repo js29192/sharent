@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bed number:</strong>
+  <%= @bed.bed_number %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @bed.room_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @bed.user_id %>
+</p>
+
+<p>
+  <strong>Booked:</strong>
+  <%= @bed.booked %>
+</p>
+
+<p>
+  <strong>Expected booking date:</strong>
+  <%= @bed.expected_booking_date %>
+</p>
+
+<p>
+  <strong>Expected vacancy date:</strong>
+  <%= @bed.expected_vacancy_date %>
+</p>
+
+<%= link_to 'Edit', edit_bed_path(@bed) %> |
+<%= link_to 'Back', beds_path %>
