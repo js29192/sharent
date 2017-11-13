@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :rooms
   resources :pgs
 
   root to: 'sharent#search'

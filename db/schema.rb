@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113072238) do
+ActiveRecord::Schema.define(version: 20171113113728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,12 @@ ActiveRecord::Schema.define(version: 20171113072238) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "floors", force: :cascade do |t|
+    t.string   "desc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pgs", force: :cascade do |t|
     t.string   "pg_name",          null: false
     t.string   "address"
@@ -42,6 +48,22 @@ ActiveRecord::Schema.define(version: 20171113072238) do
     t.integer  "state_id"
     t.integer  "city_id"
     t.integer  "area_id"
+  end
+
+  create_table "room_types", force: :cascade do |t|
+    t.string   "desc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.integer  "pg_id"
+    t.integer  "room_number"
+    t.integer  "room_type_id"
+    t.integer  "floor_id"
+    t.integer  "number_of_beds"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "states", force: :cascade do |t|

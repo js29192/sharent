@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pg_id: 1
+  room_number: 1
+  room_type_id: 1
+  floor_id: 1
+  number_of_beds: 1
+
+two:
+  pg_id: 1
+  room_number: 1
+  room_type_id: 1
+  floor_id: 1
+  number_of_beds: 1

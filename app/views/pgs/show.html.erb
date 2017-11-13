@@ -1,4 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<%= @pg.pg_name %>
+<%= @pg.address %>, 
+<%= Area.find(@pg.area_id).name %>, 
+<%= City.find(@pg.city_id).name %>, 
+<%= State.find(@pg.state_id).name %>
+
+<%= link_to 'Add Room', new_room_path(pg_id: @pg.id) %> |
 <%= link_to 'Edit', edit_pg_path(@pg) %> |
 <%= link_to 'Back', pgs_path %>
