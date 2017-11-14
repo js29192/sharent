@@ -1,13 +1,20 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :beds
   resources :rooms
   resources :pgs
 
-  root to: 'sharent#search'
+  root to: 'sharent#home'
 
   get 'sharent/contact'
 
   get 'sharent/action'
+
+  get 'sharent/search'
+
+  get 'sharent/book'
+
+  post 'sharent/create_enquiry'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

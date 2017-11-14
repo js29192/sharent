@@ -1,0 +1,4 @@
+<%= form_tag sharent_search_path, method: "GET" do %>
+  <%= select_tag :city_id, options_from_collection_for_select(get_cities, :id, :name) %>
+  <%= submit_tag "Search" %>
+<% end %>

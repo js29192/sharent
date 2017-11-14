@@ -4,7 +4,11 @@ class PgsController < ApplicationController
   # GET /pgs
   # GET /pgs.json
   def index
-    @pgs = Pg.all
+    if params[:city_id]
+      @pgs = Pg.where(city_id: params[:city_id])
+    else
+      @pgs = Pg.all
+    end
   end
 
   # GET /pgs/1

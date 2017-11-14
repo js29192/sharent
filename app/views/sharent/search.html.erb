@@ -1,0 +1,11 @@
+<% @pgs.each do |pg| %>
+  <div>
+    <%= pg.pg_name %>
+    <%= pg.address %>, 
+    <%= Area.find(pg.area_id).name %>, 
+    <%= City.find(pg.city_id).name %>, 
+    <%= State.find(pg.state_id).name %>
+    <%= pg.beds.where(booked: false).count %>
+    <%= link_to "Book", sharent_book_path(pg_id: pg.id) %>
+  </div>
+<% end %>
