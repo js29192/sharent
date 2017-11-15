@@ -33,7 +33,7 @@ $(document).ready(function(){
       $("#pg_city_id").prepend("<option value=''>Select City</option>");
       $('#pg_city_id').val('');
     }
-  })
+  });
   $('#pg_city_id').change(function() {
     checkCity();
     city = $('#pg_city_id :selected').text();
@@ -43,5 +43,5 @@ $(document).ready(function(){
       $("#pg_area_id").prepend("<option value=''>Select Area</option>");
       $('#pg_area_id').val('');
     }
-  })
+  });
 });

@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Room Details</h1>
+
 <p>
-  <strong>Pg:</strong>
-  <%= @room.pg_id %>
+  <strong>Pg Name:</strong>
+  <%= Pg.find(@room.pg_id).pg_name %>
 </p>
 
 <p>
@@ -12,12 +14,12 @@
 
 <p>
   <strong>Room type:</strong>
-  <%= @room.room_type_id %>
+  <%= RoomType.find(@room.room_type_id).desc %>
 </p>
 
 <p>
   <strong>Floor:</strong>
-  <%= @room.floor_id %>
+  <%= Floor.find(@room.floor_id).desc %>
 </p>
 
 <p>
@@ -26,7 +28,6 @@
 </p>
 
 <%= link_to 'Add Bed', new_bed_path(room_id: @room.id) %> |
-<%= link_to 'List Beds', beds_path(room_id: @room.id) %>
-</br>
+<%= link_to 'List Beds', beds_path(room_id: @room.id) %> |
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path(pg_id: @room.pg_id) %>

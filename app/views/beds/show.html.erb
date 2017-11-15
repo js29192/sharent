@@ -1,13 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Bed Details</h1>
+
 <p>
-  <strong>Bed number:</strong>
-  <%= @bed.bed_number %>
+  <strong>PG Name:</strong>
+  <%= @bed.pg.pg_name %>
 </p>
 
 <p>
-  <strong>Room:</strong>
-  <%= @bed.room_id %>
+  <strong>Room Number:</strong>
+  <%= @bed.room.room_number %>
+</p>
+
+<p>
+  <strong>Bed number:</strong>
+  <%= @bed.bed_number %>
 </p>
 
 <p>
@@ -17,7 +24,7 @@
 
 <p>
   <strong>Booked:</strong>
-  <%= @bed.booked %>
+  <%= @bed.booked.to_s.humanize %>
 </p>
 
 <p>

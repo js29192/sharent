@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Pg</th>
       <th>Room number</th>
       <th>Room type</th>
       <th>Floor</th>
@@ -17,10 +16,9 @@
   <tbody>
     <% @rooms.each do |room| %>
       <tr>
-        <td><%= room.pg_id %></td>
         <td><%= room.room_number %></td>
-        <td><%= room.room_type_id %></td>
-        <td><%= room.floor_id %></td>
+        <td><%= RoomType.find(room.room_type_id).desc %></td>
+        <td><%= Floor.find(room.floor_id).desc %></td>
         <td><%= room.number_of_beds %></td>
         <td><%= link_to 'Show', room %></td>
         <td><%= link_to 'Edit', edit_room_path(room) %></td>
@@ -32,4 +30,5 @@
 
 <br>
 
-<%= link_to 'New Room', new_room_path(pg_id: @pg_id) %>
+<%= link_to 'New Room', new_room_path(pg_id: @pg_id) %> |
+<%= link_to 'List PGs', pgs_path %>

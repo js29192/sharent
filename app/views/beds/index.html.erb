@@ -21,7 +21,7 @@
         <td><%= bed.bed_number %></td>
         <td><%= bed.room_id %></td>
         <td><%= bed.user_id %></td>
-        <td><%= bed.booked %></td>
+        <td><%= bed.booked.to_s.humanize %></td>
         <td><%= bed.expected_booking_date %></td>
         <td><%= bed.expected_vacancy_date %></td>
         <td><%= link_to 'Show', bed %></td>
@@ -34,4 +34,5 @@
 
 <br>
 
-<%= link_to 'New Bed', new_bed_path(room_id: @room_id) %>
+<%= link_to 'New Bed', new_bed_path(room_id: @room_id) %> |
+<%= link_to 'List Rooms', rooms_path(pg_id: Room.find(@room_id).pg_id) %>

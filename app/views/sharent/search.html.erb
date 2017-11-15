@@ -1,11 +1,28 @@
-<% @pgs.each do |pg| %>
-  <div>
-    <%= pg.pg_name %>
-    <%= pg.address %>, 
-    <%= Area.find(pg.area_id).name %>, 
-    <%= City.find(pg.city_id).name %>, 
-    <%= State.find(pg.state_id).name %>
-    <%= pg.beds.where(booked: false).count %>
-    <%= link_to "Book", sharent_book_path(pg_id: pg.id) %>
-  </div>
-<% end %>
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Available Pgs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>PG Name</th>
+      <th>Address</th>
+      <th>Number of seats available</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pgs.each do |pg| %>
+      <tr>
+        <td><%= pg.pg_name %></td>
+        <td><%= pg.address %>, 
+          <%= Area.find(pg.area_id).name %>, 
+          <%= City.find(pg.city_id).name %>, 
+          <%= State.find(pg.state_id).name %>
+        </td>
+        <td><%= pg.beds.where(booked: false).count %></td>
+        <td><%= link_to "Book", sharent_book_path(pg_id: pg.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

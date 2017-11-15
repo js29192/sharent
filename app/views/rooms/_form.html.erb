@@ -12,8 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :pg_id %><br>
-    <%= f.text_field :pg_id, value: @room.pg_id, readonly: true %>
+    <%= f.hidden_field :pg_id, value: @room.pg_id, readonly: true %>
   </div>
   <div class="field">
     <%= f.label :room_number %><br>

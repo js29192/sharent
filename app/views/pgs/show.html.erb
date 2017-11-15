@@ -1,13 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<%= @pg.pg_name %>
-<%= @pg.address %>, 
-<%= Area.find(@pg.area_id).name %>, 
-<%= City.find(@pg.city_id).name %>, 
-<%= State.find(@pg.state_id).name %>
+<h1>PG Details</h1>
+
+<p>
+  <strong>Pg Name:</strong>
+  <%= @pg.pg_name %>
+</p>
+
+<p>
+  <strong>PG Address:</strong>
+  <%= @pg.address %>, 
+  <%= Area.find(@pg.area_id).name %>, 
+  <%= City.find(@pg.city_id).name %>, 
+  <%= State.find(@pg.state_id).name %>
+</p>
 
 <%= link_to 'Add Room', new_room_path(pg_id: @pg.id) %> |
-<%= link_to 'List Rooms', rooms_path(pg_id: @pg.id) %>
-</br>
+<%= link_to 'List Rooms', rooms_path(pg_id: @pg.id) %> |
 <%= link_to 'Edit', edit_pg_path(@pg) %> |
 <%= link_to 'Back', pgs_path %>

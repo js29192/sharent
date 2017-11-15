@@ -12,8 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :room_id %><br>
-    <%= f.number_field :room_id, value: @bed.room_id, readonly: true %>
+    <%= f.hidden_field :room_id, value: @bed.room_id, readonly: true %>
   </div>
   <div class="field">
     <%= f.label :user_id %><br>
@@ -22,10 +21,6 @@
   <div class="field">
     <%= f.label :bed_number %><br>
     <%= f.number_field :bed_number %>
-  </div>
-  <div class="field">
-    <%= f.label :booked %><br>
-    <%= f.check_box :booked %>
   </div>
   <div class="field">
     <%= f.label :expected_booking_date %><br>
